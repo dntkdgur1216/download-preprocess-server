@@ -18,6 +18,7 @@ def download_audio(url: str, cache_dir: str, policy: str) -> str:
             "format": "bestaudio[ext=m4a]/bestaudio/best",
             "outtmpl": os.path.join(cache_dir, "audio.%(ext)s"),
             "quiet": True,
+            "cookiesfrombrowser": "chrome",
         }
         with yt_dlp.YoutubeDL(opts) as ydl:
             info = ydl.extract_info(url, download=True)
