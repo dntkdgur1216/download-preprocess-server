@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from typing import Literal
+from typing import Literal, Optional
 import httpx, os, logging
 from .config import load_settings
 from .utils import init_cache, download_audio, convert_to_wav, cleanup_file
@@ -17,8 +17,8 @@ class DownloadRequest(BaseModel):
 class DownloadResponse(BaseModel):
     status: str
     message: str
-    audioPath: str | None = None
-    srt: str | None = None
+    audioPath: Optional[str] = None
+    srt: Optional[str] = None
 
 @router.post("/download-preprocess", response_model=DownloadResponse)
 async def download_and_preprocess(req: DownloadRequest):
