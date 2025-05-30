@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pytube
+yt-dlp
+ffmpeg-python
+httpx
+python-dotenv
+python-multipart
