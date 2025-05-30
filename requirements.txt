@@ -6,3 +6,4 @@ ffmpeg-python
 httpx
 python-dotenv
 python-multipart
+pydantic<2
