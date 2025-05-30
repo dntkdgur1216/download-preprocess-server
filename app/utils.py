@@ -18,7 +18,8 @@ def download_audio(url: str, cache_dir: str, policy: str) -> str:
             "format": "bestaudio[ext=m4a]/bestaudio/best",
             "outtmpl": os.path.join(cache_dir, "audio.%(ext)s"),
             "quiet": True,
-            "cookiesfrombrowser": "chrome",
+            # 직접 추출해 둔 쿠키 파일을 사용
+            "cookiefile": os.path.join(os.getcwd(), "cookies.txt"),
         }
         with yt_dlp.YoutubeDL(opts) as ydl:
             info = ydl.extract_info(url, download=True)

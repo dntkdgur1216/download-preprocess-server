@@ -7,4 +7,3 @@ httpx
 python-dotenv
 python-multipart
 pydantic<2
-browser_cookie3==0.16.3
