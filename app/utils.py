@@ -19,7 +19,7 @@ def download_audio(url: str, cache_dir: str, policy: str) -> str:
             "outtmpl": os.path.join(cache_dir, "audio.%(ext)s"),
             "quiet": True,
             # 직접 추출해 둔 쿠키 파일을 사용
-            "cookiefile": os.path.join(os.getcwd(), "cookies.txt"),
+            "cookiefile": "/home/ec2-user/download-preprocess-server/cookies.txt",
         }
         with yt_dlp.YoutubeDL(opts) as ydl:
             info = ydl.extract_info(url, download=True)
