@@ -53,3 +53,4 @@ async def download_and_preprocess(req: DownloadRequest):
     except Exception as e:
         logger.error("Error pipeline: %s", e, exc_info=True)
         raise HTTPException(status_code=500, detail=str(e))
+ 
