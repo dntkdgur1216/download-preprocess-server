@@ -2,10 +2,10 @@ import os
 from pydantic import BaseSettings
 
 class Settings(BaseSettings):
-    PORT: int = 8001
+    PORT: int = 8000
     DEBUG: bool = False
     TMP_ROOT: str = "/tmp/download_preprocess"
-    WHISPER_URL: str = "http://localhost:8002/internal/transcribe"
+    WHISPER_URL: str = "http://54.180.24.69:8002/internal/transcribe"
 
     class Config:
         env_file = ".env"
