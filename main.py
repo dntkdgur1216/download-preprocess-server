@@ -8,7 +8,7 @@ app = FastAPI(
     title="Download & Preprocess Service",
     description="YouTube→WAV→Whisper 통합 파이프라인"
 )
-app.include_router(router, prefix="/internal")
+app.include_router(router)
 
 if __name__ == "__main__":
     import uvicorn
@@ -18,4 +18,3 @@ if __name__ == "__main__":
         port=int(settings.PORT),
         reload=settings.DEBUG
     )
- 
